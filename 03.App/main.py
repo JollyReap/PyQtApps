@@ -18,13 +18,13 @@ class MyWin(QtWidgets.QMainWindow):
 
     def parse(self):
         block = self.soup.find('div', id='tool_padding')
-        # Check js
+ 
         check_js = block.find('div', id='javascript_check')
         status_js = check_js.find_all('span')[1].text
-        # Check Cookie
+       
         check_ck = block.find('div', id='cookie_check')
         status_ck = check_ck.find_all('span')[1].text
-        # Check Flash
+   
         check_fh = block.find('div', id='flash_version')
         status_fh = check_fh.find_all('span')[1].text
         self.ui.label.setText(f'JavaScript:{status_js}\nCookie:{status_ck}\nFlash:{status_fh}')
